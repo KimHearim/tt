@@ -1,0 +1,131 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li, ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+/* 세로형 네비게이션바 */
+
+
+span{color:black;}
+
+#navi>ul {
+	border:1px solid black;
+	width: 300px;
+}
+/* 메인메뉴 */
+#navi>ul>li {
+	background: wihte;
+	color: black;
+	padding: 10px 20px;
+	border-bottom: 1px dotted white;
+	position: relative;
+}
+/* 서브메뉴 */
+#navi>ul>li>ul {
+	/* display: none; */
+	visibility:hidden;
+	opacity:0;
+	transition:1s;
+	width: 150px;
+	/* padding-left:5px; */
+	position: absolute;
+	left: 100%;	/* left:150px */
+	top: 0;
+	border: 3px solid blue;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+#navi>ul>li:hover>ul {
+	/* display: block; */
+	visibility:visible;
+	opacity:1;
+	background-color:#131313;
+}
+#navi>ul>li>ul>li {
+	padding: 10px 20px;
+}
+#navi li:hover {
+	background: #131313;
+}
+/* 서브 서브 메뉴 */
+
+span:hover {color:white;}
+#navi ul>li>ul>li {
+	position: relative;
+}
+#navi ul ol li {
+	padding: 10px;
+}
+
+
+/* 삼각형만들기 :before; :after; */
+#navi>ul>li>a{
+	position:relative;
+	display:block;
+	}
+#navi>ul>li>a:after{
+	content:'';
+	width:0;
+	height:0;
+	border:4px solid transparent;
+	border-left:4px solid black;
+	position:absolute;
+	right:5px;
+	top:10px;
+	}
+#navi>ul>li>a:before{
+	content:'';
+	width:0;
+	height:0;
+	border:4px solid transparent;
+	color:blakc;
+	border-left:4px solid gray;
+	position:absolute;
+	right:5px;
+	top:12px;
+	}
+#navi>ul>li>a:hover:after{
+	border-left:4px solid white;
+}
+#navi>ul>li>a:hover:before{
+	border-left:4px solid black;
+}
+
+#navi a span:nth-child(1){
+	display:block;
+}
+#navi a span:nth-child(2){
+	display:none;
+}
+#navi li:hover span:nth-child(1){
+	display:none;
+}
+#navi li:hover span:nth-child(2){
+	display:block;
+}
+
+
+
+@media screen and (max-width:600px) {
+
+.navi {width:20%; height:auto;}
+
+.span { font-size:0.5rem;}
+
+.li { width:50%; height:20px;}
+
+.ul {width:50%; height:200px;}
+
+.navi>ul>li>a{
+	position:relative;
+	display:inline;
+	}
